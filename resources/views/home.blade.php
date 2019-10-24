@@ -103,7 +103,7 @@
                         <h5 class="card-category">Backend development</h5>
                         <h4 class="card-title">Tasks</h4>
                         @foreach($data as $value)
-                        {{$value->tahun }} - {{$value->bulan }} - {{ $value->jumlah }} - {{ $value->id_pengunjung}}
+                            {{$value->tahun }} - {{$value->bulan }} - {{ $value->jumlah }} - {{ $value->id_pengunjung}}
                             <br>
                         @endforeach
                     </div>
@@ -322,9 +322,9 @@
         var data = {
             labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             datasets: [{
-                label: "Stock A",
-                fill: false,
-                lineTension: 0.1,
+                label: "Domestik",
+                fill: true,
+                lineTension: 0.4,
                 backgroundColor: "rgba(225,0,0,0.4)",
                 borderColor: "red", // The main line color
                 borderCapStyle: 'square',
@@ -341,12 +341,16 @@
                 pointRadius: 4,
                 pointHitRadius: 10,
                 // notice the gap in the data and the spanGaps: true
-                data: [65, 59, 80, 81, 56, 55, 40, 50, 60, 55, 30, 78],
+                data: [
+                    @foreach($data->where('id_pengunjung',1) as $value)
+                    {{$value->jumlah}},
+                    @endforeach
+                ],
                 spanGaps: true,
             }, {
-                label: "Stock B",
+                label: "Mancanegara",
                 fill: true,
-                lineTension: 0.1,
+                lineTension: 0.4,
                 backgroundColor: "rgba(167,105,0,0.4)",
                 borderColor: "rgb(167, 105, 0)",
                 borderCapStyle: 'butt',
@@ -363,7 +367,11 @@
                 pointRadius: 4,
                 pointHitRadius: 10,
                 // notice the gap in the data and the spanGaps: false
-                data: [10, 20, 60, 95, 64, 78, 90, 40, 70, 40, 70, 89],
+                data: [
+                    @foreach($data->where('id_pengunjung',2) as $value)
+                    {{$value->jumlah}},
+                    @endforeach
+                ],
                 spanGaps: false,
             }
 
