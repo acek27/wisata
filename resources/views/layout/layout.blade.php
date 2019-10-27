@@ -21,7 +21,9 @@
     <link href="{{asset('/assets/css/now-ui-dashboard.css?v=1.3.0')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     {{--<link href="{{asset('/assets/demo/demo.css')}}" rel="stylesheet"/>--}}
+    <link href="{{asset('plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
     @yield('css')
+
 </head>
 
 <body class="">
@@ -43,14 +45,6 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                @can('admin')
-                    <li>
-                        <a href="{{route('dataPengunjung.index')}}">
-                            <i class="now-ui-icons design_app"></i>
-                            <p>Data Pengunjung</p>
-                        </a>
-                    </li>
-                @endcan
                 <li>
                     <a href="{{route('wisata.index')}}">
                         <i class="now-ui-icons location_world"></i>
@@ -113,24 +107,24 @@
                             </a>
                         </li>
                         {{--@guest--}}
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    <i class="now-ui-icons users_single-02"></i>
-                                    <p>
-                                        <span>{{ Auth::user()->name }}</span>
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="now-ui-icons users_single-02"></i>
+                                <p>
+                                    <span>{{ Auth::user()->name }}</span>
+                                </p>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                    {{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                         {{--@endguest--}}
                     </ul>
                 </div>
@@ -188,7 +182,14 @@
 <script src="{{asset('/assets/js/now-ui-dashboard.min.js?v=1.3.0')}}" type="text/javascript"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 {{--<script src="{{asset('/assets/demo/demo.js')}}"></script>--}}
-
+<script src="{{asset('plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 @stack ('script')
 
 </body>

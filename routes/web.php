@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tabelPengunjung', 'dataPengunjungController@tabelPengunjung')->name('tabel.pengunjung');
 Route::Resource('/dataPengunjung', 'dataPengunjungController');
 Route::Resource('/wisata', 'wisataController');
+Route::get('/tabelwisata', 'wisataController@tabelwisata')->name('tabel.wisata');

@@ -43,7 +43,7 @@ class dataPengunjungController extends Controller
 
     public function tabelPengunjung()
     {
-        return DataTables::of(dataPengunjung::join('pengunjung', 'pengunjung.id_pengunjung', '=', 'datapengunjung.id_pengunjung'))
+        return DataTables::of(dataPengunjung::leftjoin('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung'))
             ->make(true);
     }
 

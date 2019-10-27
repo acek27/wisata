@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\dataPengunjung;
 use App\User;
 use App\wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Yajra\DataTables\DataTables;
 
 class wisataController extends Controller
 {
@@ -29,6 +31,17 @@ class wisataController extends Controller
     public function create()
     {
         return view('admin.createwisata');
+    }
+    public function tabelwisata(){
+
+        return DataTables::of(wisata::join('users', 'wisata.id_user', '=', 'users.id')
+            ->where('users.id', '!=', '1'))
+            ->addColumn('action', function ($data) {
+                $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"><i class="material-icons">delete</i></a>';
+                $edit = '<a href="' . route('wisata.edit', $data->id) . '"><i class="material-icons">edit</i></a>';
+                return $edit . '&nbsp' . $del;
+            })
+            ->make(true);
     }
 
     /**
@@ -118,6 +131,6 @@ class wisataController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
     }
 }
