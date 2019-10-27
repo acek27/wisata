@@ -32,12 +32,14 @@ class wisataController extends Controller
     {
         return view('admin.createwisata');
     }
-    public function tabelwisata(){
+
+    public function tabelwisata()
+    {
 
         return DataTables::of(wisata::join('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '!=', '1'))
             ->addColumn('action', function ($data) {
-                $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"><i class="material-icons">delete</i></a>';
+                $del = '<a href="#" data-id="' . $data->id_user . '" class="hapus-data"><i class="material-icons">delete</i></a>';
                 $edit = '<a href="' . route('wisata.edit', $data->id) . '"><i class="material-icons">edit</i></a>';
                 return $edit . '&nbsp' . $del;
             })
@@ -108,7 +110,10 @@ class wisataController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = wisata::join('users', 'wisata.id_user', '=', 'users.id')->first();
+//        return response()->json($data);
+        return view('admin.editwisata', compact('data'));
+
     }
 
     /**
@@ -120,7 +125,24 @@ class wisataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::where('id', '=', $id)
+            ->update([
+                'name' => $request['name'],
+                'email' => $request['email'],
+            ]);
+        wisata::where('id_user', '=', $id)
+            ->update([
+                'alamat' => $request['alamat'],
+                'deskripsi' => $request['deskripsi'],
+                'facebook' => $request['fb'],
+                'twitter' => $request['tw'],
+                'instagram' => $request['ig'],
+            ]);
+        \Session::flash("flash_notification", [
+            "level" => "success",
+            "message" => "Data Berhasil Diupdate!"
+        ]);
+        return redirect()->route('wisata.index');
     }
 
     /**
