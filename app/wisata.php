@@ -8,5 +8,10 @@ class wisata extends Model
 {
     protected $table = 'wisata';
     public $timestamps = false;
-    protected $fillable = ['jumlah_dataPengunjung','tanggal_dataPengunjung','id_pengunjung'];
+    protected $fillable = ['alamat','deskripsi','facebook','twitter','instagram','gambar','id_user'];
+
+    public function User()
+    {
+        return $this->hasMany(User::class, 'id_user', 'id');
+    }
 }

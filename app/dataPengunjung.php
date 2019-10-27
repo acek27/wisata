@@ -12,6 +12,6 @@ class dataPengunjung extends Model
 
     public function pengunjung()
     {
-        return $this->belongsTo('App\dataPengunjung','id_pengunjung','id_pengunjung');
+        return $this->belongsTo('App\pengunjung','id_pengunjung','id_pengunjung');
     }
 }
