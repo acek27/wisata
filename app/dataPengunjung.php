@@ -10,4 +10,8 @@ class dataPengunjung extends Model
     public $timestamps = false;
     protected $fillable = ['jumlah_dataPengunjung','tanggal_dataPengunjung','id_pengunjung'];
 
+    public function pengunjung()
+    {
+        return $this->belongsTo('App\dataPengunjung','id_pengunjung','id_pengunjung');
+    }
 }

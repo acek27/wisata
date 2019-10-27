@@ -61,8 +61,8 @@
                         name: 'tanggal_dataPengunjung'
                     },
                     {
-                        data: 'id_pengunjung',
-                        name: 'id_pengunjung'
+                        data: 'status_pengunjung',
+                        name: 'status_pengunjung'
                     },
                 ]
             });
