@@ -20,7 +20,7 @@ class wisataController extends Controller
     {
         $wisata = wisata::join('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '!=', '1')->get();
-        return view('admin/profilwisata', compact('wisata'));
+        return view('admin.profilwisata', compact('wisata'));
     }
 
     /**
@@ -130,6 +130,11 @@ class wisataController extends Controller
                 'name' => $request['name'],
                 'email' => $request['email'],
             ]);
+
+        $gambar = $request->file('gambar');
+        $new_name = rand() . '.' . $gambar->getClientOriginalExtension();
+        $gambar->move(public_path("images"), $new_name);
+
         wisata::where('id_user', '=', $id)
             ->update([
                 'alamat' => $request['alamat'],
@@ -137,6 +142,7 @@ class wisataController extends Controller
                 'facebook' => $request['fb'],
                 'twitter' => $request['tw'],
                 'instagram' => $request['ig'],
+                'gambar' => $new_name,
             ]);
         \Session::flash("flash_notification", [
             "level" => "success",

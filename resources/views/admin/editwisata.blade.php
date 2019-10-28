@@ -20,7 +20,7 @@
             <div class="col-lg-8">
                 <div class="card card-chart">
                     <div class="card-header">
-                        {!! Form::model($data,['url'=>route('wisata.update',$data->id_user),'method'=>'put']) !!}
+                        {!! Form::model($data,['url'=>route('wisata.update',$data->id_user),'method'=>'put','files'=> true  ]) !!}
                         @csrf
                         <div class="form-group row">
                             <label for="name"
@@ -116,7 +116,7 @@
                                      style="margin-top: -10px">
                                         <span class="btn btn-round btn-outline-primary btn-file">
                                         <span class="fileinput-new">Select Image</span>
-	                                    <input type="file" name="gambar" onchange="readURL(this);" id="gambar"></span>
+	                                    <input type="file" name="gambar" onchange="readURL(this);" id="gambar" required></span>
                                     {{--<a href="#pablo" class="btn btn-danger btn-round fileinput-exists"--}}
                                     {{--data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>--}}
                                 </div>
