@@ -4,8 +4,8 @@
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/profilwisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profilwisata.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/inputPengunjung.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/inputPengunjung.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +153,8 @@
       <workItem from="1571891615675" duration="7276000" />
       <workItem from="1572134591978" duration="7202000" />
       <workItem from="1572149918961" duration="18809000" />
-      <workItem from="1572222031997" duration="3282000" />
+      <workItem from="1572222031997" duration="4639000" />
+      <workItem from="1572237980696" duration="6977000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -190,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572183880419</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="form data pengunjung">
+      <created>1572225345767</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572225345767</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +223,7 @@
     <MESSAGE value="create wisata" />
     <MESSAGE value="delete wisata" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="form data pengunjung" />
+    <option name="LAST_COMMIT_MESSAGE" value="form data pengunjung" />
   </component>
 </project>

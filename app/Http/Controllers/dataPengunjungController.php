@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\dataPengunjung;
+use App\kabupaten;
+use App\negara;
+use App\provinsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
@@ -28,7 +31,9 @@ class dataPengunjungController extends Controller
     public function create()
     {
         $date = date('Y-m-d');
-        return view('adminWisata.inputPengunjung',compact('date'));
+        $negara = negara::all();
+        $provinsi = provinsi::all();
+        return view('adminWisata.inputPengunjung',compact('date','negara','provinsi'));
     }
 
     /**
@@ -40,6 +45,10 @@ class dataPengunjungController extends Controller
     public function store(Request $request)
     {
         //
+    }
+    public function dataProvinsi(){
+        $data =kabupaten::all();
+        return response()->json($data);
     }
 
     public function tabelPengunjung()
