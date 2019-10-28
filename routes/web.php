@@ -22,4 +22,4 @@ Route::get('/tabelPengunjung', 'dataPengunjungController@tabelPengunjung')->name
 Route::Resource('/dataPengunjung', 'dataPengunjungController');
 Route::Resource('/wisata', 'wisataController');
 Route::get('/tabelwisata', 'wisataController@tabelwisata')->name('tabel.wisata');
-Route::post('/dataProvinsi', 'dataPengunjungController@dataProvinsi')->name('data.provinsi');
+Route::post('/dataProvinsi/{id}', 'dataPengunjungController@dataProvinsi')->name('data.provinsi');

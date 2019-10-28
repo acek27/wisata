@@ -46,8 +46,8 @@ class dataPengunjungController extends Controller
     {
         //
     }
-    public function dataProvinsi(){
-        $data =kabupaten::all();
+    public function dataProvinsi($id){
+        $data =kabupaten::where('province_id','=',$id)->get();
         return response()->json($data);
     }
 

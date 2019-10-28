@@ -154,7 +154,7 @@
       <workItem from="1572134591978" duration="7202000" />
       <workItem from="1572149918961" duration="18809000" />
       <workItem from="1572222031997" duration="4639000" />
-      <workItem from="1572237980696" duration="6977000" />
+      <workItem from="1572237980696" duration="8694000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -198,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572225345767</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="dropdown negara">
+      <created>1572247902377</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572247902377</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +231,7 @@
     <MESSAGE value="delete wisata" />
     <MESSAGE value="update" />
     <MESSAGE value="form data pengunjung" />
-    <option name="LAST_COMMIT_MESSAGE" value="form data pengunjung" />
+    <MESSAGE value="dropdown negara" />
+    <option name="LAST_COMMIT_MESSAGE" value="dropdown negara" />
   </component>
 </project>

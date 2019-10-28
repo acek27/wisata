@@ -123,7 +123,7 @@
             $('#provinsi').change(function () {
                 var id = $(this).val();
                 $.ajax({
-                    url: "{{route('data.provinsi')}}/"+id,
+                    url: "/dataProvinsi/"+id,
                     method: "POST",
                     data: {id: id},
                     async: true,
