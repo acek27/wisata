@@ -26,7 +26,7 @@
                                 <label for="wisatawan"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Wisatawan') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-control" id="list" required>
+                                    <select class="form-control" name="pengunjung" id="list" required>
                                         <option value="">-- Pilih wisatawan --</option>
                                         <option value="1">Domestik</option>
                                         <option value="2">Mancanegara</option>
@@ -39,7 +39,7 @@
                                 <label for="wisatawan"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Asal Negara') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-control" id="negara" required>
+                                    <select class="form-control" name="negara" id="negara">
                                         <option value="">-- Pilih negara --</option>
                                         @foreach($negara as $value)
                                             <option value="{{$value->id}}">{{$value->negara_nama}}</option>
@@ -53,7 +53,7 @@
                                 <label for="wisatawan"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Provinsi') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-control" id="provinsi" required>
+                                    <select class="form-control" name="provinsi" id="provinsi">
                                         <option value="">-- Pilih provinsi --</option>
                                         @foreach($provinsi as $value)
                                             <option value="{{$value->id}}">{{$value->name}}</option>
@@ -66,7 +66,7 @@
                                 <label for="wisatawan"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Kabupaten') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-control" id="kabupaten">
+                                    <select class="form-control" id="kabupaten" name="kabupaten">
                                         <option>-- Pilih kabupaten --</option>
                                     </select>
                                 </div>
@@ -111,12 +111,15 @@
                 var list = $("#list").val();
                 if (list == 1) {
                     $('#divnegara').fadeOut();
+                    $("#negara").val("")
                     $("#divprovinsi").fadeIn();
                     $("#divkabupaten").fadeIn();
                 } else if (list == 2) {
                     $("#divnegara").fadeIn();
                     $("#divprovinsi").fadeOut();
+                    $("#provinsi").val("")
                     $("#divkabupaten").fadeOut();
+                    $("#kabupaten").val("")
                 }
             });
 

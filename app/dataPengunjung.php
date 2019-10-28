@@ -8,7 +8,7 @@ class dataPengunjung extends Model
 {
     protected $table = 'datapengunjung';
     public $timestamps = false;
-    protected $fillable = ['jumlah_dataPengunjung','tanggal_dataPengunjung','id_pengunjung'];
+    protected $fillable = ['jumlah_dataPengunjung','tanggal_dataPengunjung','id_negara','id_kabupaten','id_pengunjung','id_user'];
 
     public function pengunjung()
     {

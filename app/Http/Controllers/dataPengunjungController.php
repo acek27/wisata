@@ -6,7 +6,9 @@ use App\dataPengunjung;
 use App\kabupaten;
 use App\negara;
 use App\provinsi;
+use App\wisata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Yajra\Datatables\Datatables;
 
@@ -19,7 +21,7 @@ class dataPengunjungController extends Controller
      */
     public function index()
     {
-        ;
+
         return view('admin.dataPengunjung');
     }
 
@@ -33,7 +35,7 @@ class dataPengunjungController extends Controller
         $date = date('Y-m-d');
         $negara = negara::all();
         $provinsi = provinsi::all();
-        return view('adminWisata.inputPengunjung',compact('date','negara','provinsi'));
+        return view('adminWisata.inputPengunjung', compact('date', 'negara', 'provinsi'));
     }
 
     /**
@@ -44,10 +46,37 @@ class dataPengunjungController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pengunjung = $request->get('pengunjung');
+        $date = date('Y-m-d');
+        if ($pengunjung == 1) {
+            dataPengunjung::create([
+                'jumlah_dataPengunjung' => $request['jumlah'],
+                'tanggal_dataPengunjung' => $date,
+                'id_negara' => 102,
+                'id_kabupaten' => $request['kabupaten'],
+                'id_pengunjung' => $request['pengunjung'],
+                'id_user' => Auth::user()->id,
+            ]);
+        } elseif ($pengunjung == 2) {
+            dataPengunjung::create([
+                'jumlah_dataPengunjung' => $request['jumlah'],
+                'tanggal_dataPengunjung' => $date,
+                'id_negara' => $request['negara'],
+                'id_pengunjung' => $request['pengunjung'],
+                'id_user' => Auth::user()->id,
+            ]);
+        }
+
+        \Session::flash("flash_notification", [
+            "level" => "success",
+            "message" => "Berhasil Menambah Pengunjung"
+        ]);
+        return redirect()->route('wisata.index');
     }
-    public function dataProvinsi($id){
-        $data =kabupaten::where('province_id','=',$id)->get();
+
+    public function dataProvinsi($id)
+    {
+        $data = kabupaten::where('province_id', '=', $id)->get();
         return response()->json($data);
     }
 
