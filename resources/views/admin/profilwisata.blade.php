@@ -80,7 +80,7 @@
                                 <span> |</span>
                                 <i class="now-ui-icons location_world"></i> <a
                                     href="http://twitter.com/{{$data->twitter}}">twitter</a>
-                                <span> |</span>tabel
+                                <span> |</span>
                                 <i class="now-ui-icons location_world"></i> <a
                                     href="http://instagram.com/{{$data->instagram}}">instagram</a>
                             </div>

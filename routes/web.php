@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/home');
+    return redirect()->route('userWisata.index');
 });
 
 Auth::routes();
@@ -21,5 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tabelPengunjung', 'dataPengunjungController@tabelPengunjung')->name('tabel.pengunjung');
 Route::Resource('/dataPengunjung', 'dataPengunjungController');
 Route::Resource('/wisata', 'wisataController');
+Route::Resource('/userWisata', 'userWisataController');
 Route::get('/tabelwisata', 'wisataController@tabelwisata')->name('tabel.wisata');
 Route::post('/dataProvinsi/{id}', 'dataPengunjungController@dataProvinsi')->name('data.provinsi');
