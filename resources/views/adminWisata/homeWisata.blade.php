@@ -263,38 +263,38 @@
             }
         });
     </script>
-@endpush
-@push('script')
-    <script src="{{asset('datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('datatables/dataTables.bootstrap4.min.js')}}"></script>
-    {{--<script src="{{asset('asetsba2/js/demo/datatables-demo.js')}}"></script>--}}
 
-    <script>
-        $(document).ready(function () {
-            var dt = $('#tabelPengunjung').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: '{{route('tabel.pengunjung')}}',
-                columns: [{
-                    data: 'id_dataPengunjung',
-                    name: 'id_dataPengunjung'
-                },
-                    {
-                        data: 'jumlah_dataPengunjung',
-                        name: 'jumlah_dataPengunjung'
+    @push('script')
+        <script src="{{asset('datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('datatables/dataTables.bootstrap4.min.js')}}"></script>
+        {{--<script src="{{asset('asetsba2/js/demo/datatables-demo.js')}}"></script>--}}
+
+        <script>
+            $(document).ready(function () {
+                var dt = $('#tabelPengunjung').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: '{{route('tabel.pengunjungWisata')}}',
+                    columns: [{
+                        data: 'id_dataPengunjung',
+                        name: 'id_dataPengunjung'
                     },
-                    {
-                        data: 'tanggal_dataPengunjung',
-                        name: 'tanggal_dataPengunjung'
-                    },
-                    {
-                        data: 'status_pengunjung',
-                        name: 'status_pengunjung'
-                    },
-                ]
+                        {
+                            data: 'jumlah_dataPengunjung',
+                            name: 'jumlah_dataPengunjung'
+                        },
+                        {
+                            data: 'tanggal_dataPengunjung',
+                            name: 'tanggal_dataPengunjung'
+                        },
+                        {
+                            data: 'status_pengunjung',
+                            name: 'status_pengunjung'
+                        },
+                    ]
+                });
             });
-        });
-    </script>
+        </script>
+    @endpush
+
 @endpush
-
-

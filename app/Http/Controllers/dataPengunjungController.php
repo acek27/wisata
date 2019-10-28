@@ -86,6 +86,13 @@ class dataPengunjungController extends Controller
             ->make(true);
     }
 
+    public function tabelPengunjungWisata()
+    {
+        return DataTables::of(dataPengunjung::leftjoin('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+            ->where('id_user', '=', Auth::user()->id))
+            ->make(true);
+    }
+
     /**
      * Display the specified resource.
      *

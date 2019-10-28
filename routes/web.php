@@ -18,9 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/tabelPengunjung', 'dataPengunjungController@tabelPengunjung')->name('tabel.pengunjung');
+
 Route::Resource('/dataPengunjung', 'dataPengunjungController');
+Route::get('/tabelPengunjung', 'dataPengunjungController@tabelPengunjung')->name('tabel.pengunjung');
+Route::get('/tabelPengunjungWisata', 'dataPengunjungController@tabelPengunjungWisata')->name('tabel.pengunjungWisata');
+
 Route::Resource('/wisata', 'wisataController');
-Route::Resource('/userWisata', 'userWisataController');
-Route::get('/tabelwisata', 'wisataController@tabelwisata')->name('tabel.wisata');
 Route::post('/dataProvinsi/{id}', 'dataPengunjungController@dataProvinsi')->name('data.provinsi');
+Route::get('/tabelwisata', 'wisataController@tabelwisata')->name('tabel.wisata');
+
+Route::Resource('/adminWisata', 'adminWisataController');
+
+Route::Resource('/userWisata', 'userWisataController');

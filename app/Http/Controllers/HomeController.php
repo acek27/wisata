@@ -25,16 +25,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //select disini
-        $data = dataPengunjung::select(
-            DB::raw('YEAR(tanggal_dataPengunjung) as tahun'),'id_pengunjung',
-            DB::raw('MONTH(tanggal_dataPengunjung) as bulan'),'id_pengunjung',
-            DB::raw('sum(jumlah_dataPengunjung) as jumlah'))
-            ->where(DB::raw('YEAR(tanggal_dataPengunjung)'),'=', DB::raw('YEAR(current_date())'))
-            ->groupby(DB::raw('YEAR(tanggal_dataPengunjung)'))
-            ->groupby(DB::raw('MONTH(tanggal_dataPengunjung)'))
-            ->groupby('id_pengunjung')
-            ->get();
-        return view('home', compact('data'));
+
+        if (\Auth::user()->can('admin') == 1) {
+            $data = dataPengunjung::select(
+                DB::raw('YEAR(tanggal_dataPengunjung) as tahun'), 'id_pengunjung',
+                DB::raw('MONTH(tanggal_dataPengunjung) as bulan'), 'id_pengunjung',
+                DB::raw('sum(jumlah_dataPengunjung) as jumlah'))
+                ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', DB::raw('YEAR(current_date())'))
+                ->groupby(DB::raw('YEAR(tanggal_dataPengunjung)'))
+                ->groupby(DB::raw('MONTH(tanggal_dataPengunjung)'))
+                ->groupby('id_pengunjung')
+                ->get();
+            return view('home', compact('data'));
+        } elseif (\Auth::user()->can('adminwisata') == 2) {
+            return redirect()->route('adminWisata.index');
+        }
     }
 }

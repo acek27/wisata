@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/userWisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/userWisataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/wisata.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/wisata.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/profilwisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profilwisata.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -155,7 +162,7 @@
       <workItem from="1572149918961" duration="18809000" />
       <workItem from="1572222031997" duration="4639000" />
       <workItem from="1572237980696" duration="11709000" />
-      <workItem from="1572262489996" duration="4824000" />
+      <workItem from="1572262489996" duration="11178000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -220,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572265784317</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="user wisata">
+      <created>1572268764721</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572268764721</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +263,7 @@
     <MESSAGE value="dropdown negara" />
     <MESSAGE value="dropdown fix" />
     <MESSAGE value="create pengunjung" />
-    <option name="LAST_COMMIT_MESSAGE" value="create pengunjung" />
+    <MESSAGE value="user wisata" />
+    <option name="LAST_COMMIT_MESSAGE" value="user wisata" />
   </component>
 </project>
