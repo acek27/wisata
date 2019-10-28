@@ -31,7 +31,7 @@
                                 <i class="now-ui-icons ui-1_simple-add"></i><span> Tambah Wisata</span></a>
                         @endcan
                         @can('adminwisata')
-                            <a class="btn btn-primary" href="{{route('wisata.create')}}">
+                            <a class="btn btn-primary" href="{{route('dataPengunjung.create')}}">
                                 <i class="now-ui-icons ui-1_simple-add"></i><span> Tambah Data Pengunjung</span></a>
                         @endcan
                     </div>
@@ -105,8 +105,8 @@
                 ajax: '{{route('tabel.wisata')}}',
                 columns: [
                     {
-                        data: 'id',
-                        name: 'id'
+                        data: 'id_user',
+                        name: 'id_user'
                     },
                     {
                         data: 'name',

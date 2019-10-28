@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/editwisata.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/profilwisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/profilwisata.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -151,7 +152,8 @@
       <workItem from="1571561457256" duration="13136000" />
       <workItem from="1571891615675" duration="7276000" />
       <workItem from="1572134591978" duration="7202000" />
-      <workItem from="1572149918961" duration="17545000" />
+      <workItem from="1572149918961" duration="18809000" />
+      <workItem from="1572222031997" duration="3282000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -181,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572181424637</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1572183880419</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572183880419</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +214,7 @@
     <MESSAGE value="rebuild" />
     <MESSAGE value="create wisata" />
     <MESSAGE value="delete wisata" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete wisata" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

@@ -36,7 +36,7 @@ class wisataController extends Controller
     public function tabelwisata()
     {
 
-        return DataTables::of(wisata::join('users', 'wisata.id_user', '=', 'users.id')
+        return DataTables::of(wisata::leftjoin('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '!=', '1'))
             ->addColumn('action', function ($data) {
                 $del = '<a href="#" data-id="' . $data->id_user . '" class="hapus-data"><i class="material-icons">delete</i></a>';

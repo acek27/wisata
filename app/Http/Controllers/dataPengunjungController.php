@@ -27,7 +27,8 @@ class dataPengunjungController extends Controller
      */
     public function create()
     {
-        //
+        $date = date('Y-m-d');
+        return view('adminWisata.inputPengunjung',compact('date'));
     }
 
     /**
