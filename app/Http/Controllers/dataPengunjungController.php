@@ -96,8 +96,8 @@ class dataPengunjungController extends Controller
             ->where('id_user', '=', Auth::user()->id))
             ->addColumn('action', function ($data) {
                 $del = '<a href="#" data-id="' . $data->id_dataPengunjung . '" class="hapus-data"><i class="now-ui-icons files_box"> delete</i></a>';
-                $edit = '<a href="' . route('dataPengunjung.edit', $data->id_dataPengunjung) . '"><i class="now-ui-icons text_caps-small"> edit</i></a>';
-                return $edit. '&nbsp' . ' | '  . '&nbsp' .$del;
+//                $edit = '<a href="' . route('dataPengunjung.edit', $data->id_dataPengunjung) . '"><i class="now-ui-icons text_caps-small"> edit</i></a>';
+                return $del;
             })
             ->make(true);
     }
