@@ -25,6 +25,7 @@
                                 <th>Jumlah Pengunjung</th>
                                 <th>Tanggal Kunjungan</th>
                                 <th>Keterangan</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -291,8 +292,40 @@
                             data: 'status_pengunjung',
                             name: 'status_pengunjung'
                         },
+                        {
+                            data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'
+                        },
                     ]
                 });
+                var del = function (id) {
+                    swal({
+                        title: "Apakah anda yakin?",
+                        text: "Anda tidak dapat mengembalikan data yang sudah terhapus!",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Iya!",
+                        cancelButtonText: "Tidak!",
+                    }).then(
+                        function (result) {
+                            $.ajax({
+                                url: "{{route('dataPengunjung.index')}}/" + id,
+                                method: "DELETE",
+                            }).done(function (msg) {
+                                dt.ajax.reload();
+                                swal("Deleted!", "Data sudah terhapus.", "success");
+                            }).fail(function (textStatus) {
+                                alert("Request failed: " + textStatus);
+                            });
+                        }, function (dismiss) {
+                            // dismiss can be 'cancel', 'overlay', 'esc' or 'timer'
+                            swal("Cancelled", "Data batal dihapus", "error");
+                        });
+                };
+                $('body').on('click', '.hapus-data', function () {
+                    del($(this).attr('data-id'));
+                });
+
             });
         </script>
     @endpush

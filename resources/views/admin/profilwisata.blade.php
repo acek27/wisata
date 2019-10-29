@@ -26,33 +26,7 @@
                                 {!! session()->get('flash_notification.message') !!}
                             </div>
                         @endif
-                        <div class="col-lg-4">
-                            @foreach($wisata->where('id_user',Auth::user()->id) as $data)
-                                <div class="card card-chart">
-                                    <div class="card-header">
-                                        <h5 class="card-category">Global Sales</h5>
-                                        <h4 class="card-title">{{$data->name}}</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-area">
-                                            <img src="{{asset('images/'.$data->gambar)}}">
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="stats">
-                                            <i class="now-ui-icons location_world"></i> <a
-                                                href="http://facebook.com/{{$data->facebook}}">facebook</a>
-                                            <span> |</span>
-                                            <i class="now-ui-icons location_world"></i> <a
-                                                href="http://twitter.com/{{$data->twitter}}">twitter</a>
-                                            <span> |</span>
-                                            <i class="now-ui-icons location_world"></i> <a
-                                                href="http://instagram.com/{{$data->instagram}}">instagram</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+
                         @can('admin')
                             <a class="btn btn-primary" href="{{route('wisata.create')}}">
                                 <i class="now-ui-icons ui-1_simple-add"></i><span> Tambah Wisata</span></a>

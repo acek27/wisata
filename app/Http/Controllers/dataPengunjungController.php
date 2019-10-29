@@ -6,6 +6,7 @@ use App\dataPengunjung;
 use App\kabupaten;
 use App\negara;
 use App\provinsi;
+use App\User;
 use App\wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,10 @@ use Yajra\Datatables\Datatables;
 
 class dataPengunjungController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -88,8 +93,13 @@ class dataPengunjungController extends Controller
 
     public function tabelPengunjungWisata()
     {
-        return DataTables::of(dataPengunjung::leftjoin('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+        return DataTables::of(dataPengunjung::join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
             ->where('id_user', '=', Auth::user()->id))
+            ->addColumn('action', function ($data) {
+                $del = '<a href="#" data-id="' . $data->id_dataPengunjung . '" class="hapus-data"><i class="material-icons">delete</i></a>';
+                $edit = '<a href="' . route('dataPengunjung.edit', $data->id_dataPengunjung) . '"><i class="material-icons">edit</i></a>';
+                return $edit . '&nbsp' . $del;
+            })
             ->make(true);
     }
 
@@ -135,6 +145,6 @@ class dataPengunjungController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dataPengunjung::destroy($id);
     }
 }

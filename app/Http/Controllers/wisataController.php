@@ -11,6 +11,10 @@ use Yajra\DataTables\DataTables;
 
 class wisataController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +39,6 @@ class wisataController extends Controller
 
     public function tabelwisata()
     {
-
         return DataTables::of(wisata::leftjoin('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '!=', '1'))
             ->addColumn('action', function ($data) {
