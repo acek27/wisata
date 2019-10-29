@@ -3,7 +3,10 @@
 @section('title')
     Input Pengunjung
 @endsection
-
+@section('css')
+    <link href="{{url('https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css')}}"
+          rel="stylesheet"/>
+@endsection
 @section('sub')
     INPUT PENGUNJUNG WISATA TAHUN {{(int)date('Y')}} KABUPATEN JEMBER
 @endsection
@@ -51,7 +54,7 @@
                             {{--DOmestik--}}
                             <div id="divprovinsi" class="form-group row">
                                 <label for="wisatawan"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Provinsi') }}</label>
+                                       class="col-md-4 Nnticol-form-label text-md-right">{{ __('Provinsi') }}</label>
                                 <div class="col-md-6">
                                     <select class="form-control" name="provinsi" id="provinsi">
                                         <option value="">-- Pilih provinsi --</option>
@@ -79,13 +82,22 @@
                                 <div class="col-md-6">
                                     <input id="jumlah" type="number"
                                            class="form-control" name="jumlah"
-                                           min="0" required autofocus>
+                                           min="0" required>
 
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Berkunjung') }}</label>
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control datepicker" id="datepicker" name="tgl"
+                                           aria-describedby="emailHelp" required>
                                 </div>
                             </div>
                             <div class="form-group row text-center">
@@ -105,6 +117,15 @@
 @endsection
 
 @push('script')
+    <script src="{{url('https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/js/gijgo.min.js')}}"></script>
+    <script>
+        $(function () {
+            $('.datepicker').datepicker({
+                format: 'yyyy-m-d',
+                autoclose: true,
+            });
+        });
+    </script>
     <script>
         $(document).ready(function () {
             $('#list').change(function () {
@@ -126,7 +147,7 @@
             $('#provinsi').change(function () {
                 var id = $(this).val();
                 $.ajax({
-                    url: "/dataProvinsi/"+id,
+                    url: "/dataProvinsi/" + id,
                     method: "POST",
                     data: {id: id},
                     async: true,

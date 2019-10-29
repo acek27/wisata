@@ -52,11 +52,10 @@ class dataPengunjungController extends Controller
     public function store(Request $request)
     {
         $pengunjung = $request->get('pengunjung');
-        $date = date('Y-m-d');
         if ($pengunjung == 1) {
             dataPengunjung::create([
                 'jumlah_dataPengunjung' => $request['jumlah'],
-                'tanggal_dataPengunjung' => $date,
+                'tanggal_dataPengunjung' => $request['tgl'],
                 'id_negara' => 102,
                 'id_kabupaten' => $request['kabupaten'],
                 'id_pengunjung' => $request['pengunjung'],
