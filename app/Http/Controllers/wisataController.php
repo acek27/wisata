@@ -42,9 +42,9 @@ class wisataController extends Controller
         return DataTables::of(wisata::leftjoin('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '!=', '1'))
             ->addColumn('action', function ($data) {
-                $del = '<a href="#" data-id="' . $data->id_user . '" class="hapus-data"><i class="material-icons">delete</i></a>';
-                $edit = '<a href="' . route('wisata.edit', $data->id) . '"><i class="material-icons">edit</i></a>';
-                return $edit . '&nbsp' . $del;
+                $del = '<a href="#" data-id="' . $data->id_user . '" class="hapus-data" style="font-size: 15px"><i class="now-ui-icons files_box"></i> Delete</a>';
+                $edit = '<a href="' . route('wisata.edit', $data->id) . '" style="font-size: 15px"><i class="now-ui-icons text_caps-small"></i> Edit</a>';
+                return $edit. '&nbsp' . ' | '  . '&nbsp' . $del;
             })
             ->make(true);
     }

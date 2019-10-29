@@ -1,24 +1,37 @@
 @extends ('layout.layout')
 
+@section('css')
+    <link href="{{asset('datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+@endsection
+
 @section('title')
     DASHBOARD
 @endsection
 
 @section('sub')
-    PENGUNJUNG WISATA TAHUN {{(int)date('Y')}} KABUPATEN JEMBER
+    PENGUNJUNG WISATA {{ Auth::user()->name }} TAHUN {{(int)date('Y')}} KABUPATEN JEMBER
 @endsection
 
 @section('content')
     <div class="panel-header panel-header-lg">
 
-        <canvas id="bigDashboardChart" height="200px"></canvas>
+        <canvas id="bigDashboardChart"></canvas>
     </div>
     <div class="content">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card card-chart">
                     <div class="card-header">
-                        <table class="table table-bordered" id="tabelPengunjung" width="100%" cellspacing="0">
+                        @if (session()->has('flash_notification.message'))
+                            <div class="alert alert-{{ session()->get('flash_notification.level') }}">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                                </button>
+                                {!! session()->get('flash_notification.message') !!}
+                            </div>
+                        @endif
+                        <a class="btn btn-primary" href="{{route('dataPengunjung.create')}}">
+                            <i class="now-ui-icons ui-1_simple-add"></i><span> Tambah Data Pengunjung</span></a>
+                        <table class="table table-bordered" id="tabelPengunjung">
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -31,6 +44,7 @@
                             <tbody>
                             </tbody>
                         </table>
+                        <div class="card-footer"></div>
                     </div>
                 </div>
             </div>
@@ -292,9 +306,7 @@
                             data: 'status_pengunjung',
                             name: 'status_pengunjung'
                         },
-                        {
-                            data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'
-                        },
+                        {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                     ]
                 });
                 var del = function (id) {

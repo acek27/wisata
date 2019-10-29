@@ -51,18 +51,6 @@
                         <p>Profil Wisata</p>
                     </a>
                 </li>
-                <li>
-                    <a href="./user.html">
-                        <i class="now-ui-icons users_single-02"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./map.html">
-                        <i class="now-ui-icons location_map-big"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>
@@ -78,7 +66,7 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="#pablo"><h5>@yield('sub')</h5></a>
+                    <a class="navbar-brand"><h5>@yield('sub')</h5></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,25 +75,7 @@
                     <span class="navbar-toggler-bar navbar-kebab"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                    <form>
-                        <div class="input-group no-border">
-                            <input type="text" value="" class="form-control" placeholder="Search...">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pablo">
-                                <i class="now-ui-icons media-2_sound-wave"></i>
-                                <p>
-                                    <span class="d-lg-none d-md-block">Stats</span>
-                                </p>
-                            </a>
-                        </li>
                         {{--@guest--}}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -135,32 +105,14 @@
         @yield('content')
 
         <footer class="footer">
-            <div class="container-fluid">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="https://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright" id="copyright">
+            <div class="container">
+                <div class="text-center" id="copyright">
                     &copy;
                     <script>
                         document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
                     </script>
-                    , Designed by
+                    , Kabupaten Jember.
+                    <br>Designed by
                     <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
                     <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
                 </div>

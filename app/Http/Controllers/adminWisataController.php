@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\dataPengunjung;
+use App\wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -13,6 +14,7 @@ class adminWisataController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *

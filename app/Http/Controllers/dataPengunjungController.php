@@ -64,7 +64,7 @@ class dataPengunjungController extends Controller
         } elseif ($pengunjung == 2) {
             dataPengunjung::create([
                 'jumlah_dataPengunjung' => $request['jumlah'],
-                'tanggal_dataPengunjung' => $date,
+                'tanggal_dataPengunjung' => $request['tgl'],
                 'id_negara' => $request['negara'],
                 'id_pengunjung' => $request['pengunjung'],
                 'id_user' => Auth::user()->id,
@@ -75,7 +75,7 @@ class dataPengunjungController extends Controller
             "level" => "success",
             "message" => "Berhasil Menambah Pengunjung"
         ]);
-        return redirect()->route('wisata.index');
+        return redirect()->route('adminWisata.index');
     }
 
     public function dataProvinsi($id)
@@ -95,9 +95,9 @@ class dataPengunjungController extends Controller
         return DataTables::of(dataPengunjung::join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
             ->where('id_user', '=', Auth::user()->id))
             ->addColumn('action', function ($data) {
-                $del = '<a href="#" data-id="' . $data->id_dataPengunjung . '" class="hapus-data"><i class="material-icons">delete</i></a>';
-                $edit = '<a href="' . route('dataPengunjung.edit', $data->id_dataPengunjung) . '"><i class="material-icons">edit</i></a>';
-                return $edit . '&nbsp' . $del;
+                $del = '<a href="#" data-id="' . $data->id_dataPengunjung . '" class="hapus-data"><i class="now-ui-icons files_box"> delete</i></a>';
+                $edit = '<a href="' . route('dataPengunjung.edit', $data->id_dataPengunjung) . '"><i class="now-ui-icons text_caps-small"> edit</i></a>';
+                return $edit. '&nbsp' . ' | '  . '&nbsp' .$del;
             })
             ->make(true);
     }
