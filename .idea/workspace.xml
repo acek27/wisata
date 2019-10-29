@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/394469277.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +170,7 @@
       <workItem from="1572262489996" duration="13118000" />
       <workItem from="1572308522525" duration="2436000" />
       <workItem from="1572334815550" duration="2693000" />
-      <workItem from="1572348673522" duration="8299000" />
+      <workItem from="1572348673522" duration="9475000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -279,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572355562497</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="final">
+      <created>1572359656827</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572359656827</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +319,7 @@
     <MESSAGE value="delete pengunjung wisata" />
     <MESSAGE value="datepicker tambah pengunjung" />
     <MESSAGE value="admin fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin fix" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
 </project>

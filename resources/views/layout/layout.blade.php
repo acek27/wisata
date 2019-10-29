@@ -32,11 +32,21 @@
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
       -->
-        <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                <img src="{{asset('/assets/img/jbr.png')}}">
-            </a>
-        </div>
+        @can('admin')
+            <div class="logo">
+                <a href="{{route('home')}}" class="simple-text logo-normal">
+                    <img src="{{asset('/assets/img/jbr.png')}}">
+                </a>
+            </div>
+        @endcan
+        @can('adminwisata')
+            <div class="logo">
+                <a href="{{route('adminWisata.index')}}" class="simple-text logo-normal">
+                    <img src="{{asset('/assets/img/jbr.png')}}">
+                </a>
+            </div>
+        @endcan
+
         <div class="sidebar-wrapper" id="sidebar-wrapper">
             <ul class="nav">
                 <li class="active ">
