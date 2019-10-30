@@ -15,6 +15,7 @@ class wisataController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +45,7 @@ class wisataController extends Controller
             ->addColumn('action', function ($data) {
                 $del = '<a href="#" data-id="' . $data->id_user . '" class="hapus-data" style="font-size: 15px"><i class="now-ui-icons files_box"></i> Delete</a>';
                 $edit = '<a href="' . route('wisata.edit', $data->id) . '" style="font-size: 15px"><i class="now-ui-icons text_caps-small"></i> Edit</a>';
-                return $edit. '&nbsp' . ' | '  . '&nbsp' . $del;
+                return $edit . '&nbsp' . ' | ' . '&nbsp' . $del;
             })
             ->make(true);
     }

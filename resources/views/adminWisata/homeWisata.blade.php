@@ -35,9 +35,12 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Jumlah Pengunjung</th>
+                                <th>Nama Wisata</th>
+                                <th>Jumlah Wisatawan</th>
                                 <th>Tanggal Kunjungan</th>
                                 <th>Keterangan</th>
+                                <th>Kabupaten/Kota</th>
+                                <th>Negara</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -295,6 +298,10 @@
                         name: 'id_dataPengunjung'
                     },
                         {
+                            data: 'nama_wisata',
+                            name: 'nama_wisata'
+                        },
+                        {
                             data: 'jumlah_dataPengunjung',
                             name: 'jumlah_dataPengunjung'
                         },
@@ -305,6 +312,14 @@
                         {
                             data: 'status_pengunjung',
                             name: 'status_pengunjung'
+                        },
+                        {
+                            data: 'kab',
+                            name: 'kab'
+                        },
+                        {
+                            data: 'asal',
+                            name: 'asal'
                         },
                         {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                     ]

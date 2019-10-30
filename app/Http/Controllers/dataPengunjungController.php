@@ -19,6 +19,7 @@ class dataPengunjungController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -86,13 +87,23 @@ class dataPengunjungController extends Controller
 
     public function tabelPengunjung()
     {
-        return DataTables::of(dataPengunjung::leftjoin('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung'))
+        return DataTables::of(dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
+            'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata', 'regencies.name as kab', 'negara_nama as asal')
+            ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+            ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
+            ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
+            ->join('users', 'datapengunjung.id_user', '=', 'users.id'))
             ->make(true);
     }
 
     public function tabelPengunjungWisata()
     {
-        return DataTables::of(dataPengunjung::join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+        return DataTables::of(dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
+            'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata', 'regencies.name as kab', 'negara_nama as asal')
+            ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+            ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
+            ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
+            ->join('users', 'datapengunjung.id_user', '=', 'users.id')
             ->where('id_user', '=', Auth::user()->id))
             ->addColumn('action', function ($data) {
                 $del = '<a href="#" data-id="' . $data->id_dataPengunjung . '" class="hapus-data"><i class="now-ui-icons files_box"> delete</i></a>';
