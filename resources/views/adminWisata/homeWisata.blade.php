@@ -298,10 +298,6 @@
                         name: 'id_dataPengunjung'
                     },
                         {
-                            data: 'nama_wisata',
-                            name: 'nama_wisata'
-                        },
-                        {
                             data: 'jumlah_dataPengunjung',
                             name: 'jumlah_dataPengunjung'
                         },
