@@ -48,6 +48,5 @@ class HomeController extends Controller
         } elseif (\Auth::user()->can('adminwisata') == 2) {
             return redirect()->route('adminWisata.index');
         }
-
     }
 }
