@@ -177,9 +177,7 @@
                     backgroundColor: gradientFill,
                     borderWidth: 2,
                     data: [
-                        @foreach($data->where('id_pengunjung',1) as $value)
-                        {{$value->jumlah}},
-                        @endforeach
+                        {{$data1}}
                     ],
                     spanGaps: true,
                 }, {
@@ -197,9 +195,7 @@
                     backgroundColor: gradientFill,
                     borderWidth: 2,
                     data: [
-                        @foreach($data->where('id_pengunjung',2) as $value)
-                        {{$value->jumlah}},
-                        @endforeach
+                        {{$data2}}
                     ],
                     spanGaps: false,
                 }]

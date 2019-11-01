@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\dataPengunjung;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -36,9 +37,17 @@ class HomeController extends Controller
                 ->groupby(DB::raw('MONTH(tanggal_dataPengunjung)'))
                 ->groupby('id_pengunjung')
                 ->get();
-            return view('home', compact('data'));
+
+            $re = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+            foreach ($data as $key => $value) {
+                $re[$value->id_pengunjung - 1][$value->bulan - 1] = $value->jumlah;
+            }
+            $data1 = implode(', ', $re[0]);
+            $data2 = implode(', ', $re[1]);
+            return view('home', compact('data1','data2'));
         } elseif (\Auth::user()->can('adminwisata') == 2) {
             return redirect()->route('adminWisata.index');
         }
+
     }
 }
