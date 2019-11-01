@@ -38,7 +38,7 @@
                             </div>
 
                             {{--Mancanegara--}}
-                            <div id="divnegara" class="form-group row">
+                            <div id="divnegara" class="form-group row" style="display: none">
                                 <label for="wisatawan"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Asal Negara') }}</label>
                                 <div class="col-md-6">
@@ -52,7 +52,7 @@
                             </div>
 
                             {{--DOmestik--}}
-                            <div id="divprovinsi" class="form-group row">
+                            <div id="divprovinsi" class="form-group row" style="display: none">
                                 <label for="wisatawan"
                                        class="col-md-4 Nnticol-form-label text-md-right">{{ __('Provinsi') }}</label>
                                 <div class="col-md-6">
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
 
-                            <div id="divkabupaten" class="form-group row">
+                            <div id="divkabupaten" class="form-group row" style="display: none">
                                 <label for="wisatawan"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Kabupaten') }}</label>
                                 <div class="col-md-6">

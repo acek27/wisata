@@ -28,7 +28,14 @@ class userWisataController extends Controller
             ->groupby(DB::raw('MONTH(tanggal_dataPengunjung)'))
             ->groupby('id_pengunjung')
             ->get();
-        return view('user.homeUser', compact('data', 'wisata'));
+
+        $re = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+        foreach ($data as $key => $value) {
+            $re[$value->id_pengunjung - 1][$value->bulan - 1] = $value->jumlah;
+        }
+        $data1 = implode(', ', $re[0]);
+        $data2 = implode(', ', $re[1]);
+        return view('user.homeUser', compact('data1', 'data2', 'wisata'));
     }
 
     /**
@@ -71,8 +78,14 @@ class userWisataController extends Controller
             ->groupby('id_pengunjung')
             ->get();
         $wisata = User::join('wisata', 'wisata.id_user', '=', 'users.id')->where('id_user', '=', $id)->first();
+        $re = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+        foreach ($data as $key => $value) {
+            $re[$value->id_pengunjung - 1][$value->bulan - 1] = $value->jumlah;
+        }
+        $data1 = implode(', ', $re[0]);
+        $data2 = implode(', ', $re[1]);
 //        return response()->json($data);
-        return view('user.detailWisata', compact('data', 'wisata'));
+        return view('user.detailWisata', compact('data1', 'data2', 'wisata'));
     }
 
     /**
