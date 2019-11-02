@@ -38,8 +38,7 @@
                                 <th>Jumlah Wisatawan</th>
                                 <th>Tanggal Kunjungan</th>
                                 <th>Keterangan</th>
-                                <th>Kabupaten/Kota</th>
-                                <th>Negara</th>
+                                <th>Alamat</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -303,10 +302,6 @@
                         {
                             data: 'status_pengunjung',
                             name: 'status_pengunjung'
-                        },
-                        {
-                            data: 'kab',
-                            name: 'kab'
                         },
                         {
                             data: 'asal',

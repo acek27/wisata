@@ -99,7 +99,8 @@ class dataPengunjungController extends Controller
     public function tabelPengunjungWisata()
     {
         return DataTables::of(dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
-            'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata', 'regencies.name as kab', 'negara_nama as asal')
+            'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
+            DB::raw('CONCAT_WS(" ",regencies.name, " ", negara_nama) AS asal'))
             ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
             ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
             ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')

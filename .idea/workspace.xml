@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="fix chart">
+    <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/userWisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/userWisataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/inputPengunjung.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/inputPengunjung.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +178,9 @@
       <workItem from="1572481582558" duration="1297000" />
       <workItem from="1572537359092" duration="5310000" />
       <workItem from="1572566948211" duration="2975000" />
-      <workItem from="1572595379660" duration="2590000" />
+      <workItem from="1572595379660" duration="3065000" />
+      <workItem from="1572609310708" duration="5006000" />
+      <workItem from="1572709839566" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -323,7 +322,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572595435882</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix chart (all)">
+      <created>1572598078714</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1572598078714</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix chart (all)">
+      <created>1572598252409</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1572598252410</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +376,7 @@
     <MESSAGE value="fix tabel pengunjung" />
     <MESSAGE value="revisi tabel admin wisata" />
     <MESSAGE value="fix chart" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix chart" />
+    <MESSAGE value="fix chart (all)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix chart (all)" />
   </component>
 </project>
