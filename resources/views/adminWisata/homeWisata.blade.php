@@ -29,6 +29,24 @@
                                 {!! session()->get('flash_notification.message') !!}
                             </div>
                         @endif
+                            <div class="btn-group">
+                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false" style="color: white">
+                                    Export PDF by Year
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{route('wisataAdmin.pdf')}}" target="_blank">2019</a>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false" style="color: white">
+                                    Export PDF by Month
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{route('wisataAdmin.pdf')}}" target="_blank">Januari</a>
+                                </div>
+                            </div>
                         <a class="btn btn-primary" href="{{route('dataPengunjung.create')}}">
                             <i class="now-ui-icons ui-1_simple-add"></i><span> Tambah Data Pengunjung</span></a>
                             <table class="table table-bordered" id="tabelPengunjung">

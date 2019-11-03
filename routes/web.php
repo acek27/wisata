@@ -31,4 +31,5 @@ Route::Resource('/adminWisata', 'adminWisataController');
 
 Route::Resource('/userWisata', 'userWisataController');
 
-Route::get('/generatePDF','HomeController@generatePDF')->name('homeAdmin.pdf');
+Route::get('/generatePDFAdmin','HomeController@generatePDF')->name('homeAdmin.pdf');
+Route::get('/generatePDF','adminWisataController@generatePDF')->name('wisataAdmin.pdf');

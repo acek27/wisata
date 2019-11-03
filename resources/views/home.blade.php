@@ -20,7 +20,34 @@
         <div class="col-lg-12">
             <div class="card card-chart">
                 <div class="card-header">
-                    <a href="{{route('homeAdmin.pdf')}}" class="btn btn-primary" target="_blank">PRINT PDF</a>
+                    <!-- Example single danger button -->
+                    <div class="btn-group">
+                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false" target="_blank" style="color: white">
+                            Export PDF by Year
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}">2019</a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false" target="_blank" style="color: white">
+                            Export PDF by Month
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}">Januari</a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false" target="_blank" style="color: white">
+                            Export PDF by Tourism Name
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}">Teluk Love</a>
+                        </div>
+                    </div>
                     <table class="table table-bordered" id="tabelPengunjung">
                         <thead>
                         <tr>

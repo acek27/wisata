@@ -64,6 +64,6 @@ class HomeController extends Controller
             ->get();;
         $pdf = PDF::loadView('myPDF',['data'=>$data]);
 //        return $pdf->download('laporan-pegawai-pdf');
-        return $pdf->stream('laporan-pengunjung-wisata.pdf');
+        return $pdf->stream('Laporan-Wisata-'.date('Y').'.pdf');
     }
 }

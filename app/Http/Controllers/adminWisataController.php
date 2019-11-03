@@ -7,6 +7,7 @@ use App\wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class adminWisataController extends Controller
 {
@@ -41,6 +42,21 @@ class adminWisataController extends Controller
         return view('adminWisata.homeWisata', compact('data1', 'data2'));
     }
 
+    public function generatePDF()
+
+    {
+        $data = dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
+            'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
+            DB::raw('CONCAT_WS(" ",regencies.name, " ", negara_nama) AS asal'))
+            ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+            ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
+            ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
+            ->join('users', 'datapengunjung.id_user', '=', 'users.id')
+            ->where('id_user', '=', Auth::user()->id)
+            ->get();
+        $pdf = PDF::loadView('myPDF', compact('data'));
+        return $pdf->stream('Laporan-Pengunjung-'.Auth::user()->name. date('Y'));
+    }
     /**
      * Show the form for creating a new resource.
      *
