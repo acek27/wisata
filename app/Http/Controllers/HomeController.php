@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\dataPengunjung;
-use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class HomeController extends Controller
 {
@@ -44,9 +45,25 @@ class HomeController extends Controller
             }
             $data1 = implode(', ', $re[0]);
             $data2 = implode(', ', $re[1]);
-            return view('home', compact('data1','data2'));
+            return view('home', compact('data1', 'data2'));
         } elseif (\Auth::user()->can('adminwisata') == 2) {
             return redirect()->route('adminWisata.index');
         }
+    }
+
+    public function generatePDF()
+
+    {
+        $data = dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
+            'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
+            DB::raw('CONCAT_WS(" ",regencies.name, " - ", negara_nama) AS asal'))
+            ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+            ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
+            ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
+            ->join('users', 'datapengunjung.id_user', '=', 'users.id')
+            ->get();;
+        $pdf = PDF::loadView('myPDF',['data'=>$data]);
+//        return $pdf->download('laporan-pegawai-pdf');
+        return $pdf->stream('laporan-pengunjung-wisata.pdf');
     }
 }

@@ -20,6 +20,7 @@
         <div class="col-lg-12">
             <div class="card card-chart">
                 <div class="card-header">
+                    <a href="{{route('homeAdmin.pdf')}}" class="btn btn-primary" target="_blank">PRINT PDF</a>
                     <table class="table table-bordered" id="tabelPengunjung">
                         <thead>
                         <tr>
@@ -28,8 +29,7 @@
                             <th>Jumlah Wisatawan</th>
                             <th>Tanggal Kunjungan</th>
                             <th>Keterangan</th>
-                            <th>Kabupaten/Kota</th>
-                            <th>Negara</th>
+                            <th>Asal</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -295,10 +295,6 @@
                     {
                         data: 'status_pengunjung',
                         name: 'status_pengunjung'
-                    },
-                    {
-                        data: 'kab',
-                        name: 'kab'
                     },
                     {
                         data: 'asal',

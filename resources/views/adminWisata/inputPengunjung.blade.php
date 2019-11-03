@@ -24,7 +24,15 @@
                         <div class="card-body">
                             {!! Form::open(['url'=>route('dataPengunjung.store'),  'method'=>'post']) !!}
                             @csrf
+                            <div class="form-group row">
+                                <label for="name"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Berkunjung') }}</label>
 
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control datepicker" id="datepicker" name="tgl"
+                                           aria-describedby="emailHelp" required>
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label for="wisatawan"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Wisatawan') }}</label>
@@ -75,7 +83,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                            <div id="divjumlah" class="form-group row" style="display: none">
                                 <label for="name"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Jumlah Pengunjung') }}</label>
 
@@ -91,15 +99,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="name"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Tanggal Berkunjung') }}</label>
 
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control datepicker" id="datepicker" name="tgl"
-                                           aria-describedby="emailHelp" required>
-                                </div>
-                            </div>
                             <div class="form-group row text-center">
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-primary">
@@ -135,12 +135,14 @@
                     $("#negara").val("")
                     $("#divprovinsi").fadeIn();
                     $("#divkabupaten").fadeIn();
+                    $("#divjumlah").fadeIn();
                 } else if (list == 2) {
                     $("#divnegara").fadeIn();
                     $("#divprovinsi").fadeOut();
                     $("#provinsi").val("")
                     $("#divkabupaten").fadeOut();
                     $("#kabupaten").val("")
+                    $("#divjumlah").fadeIn();
                 }
             });
 

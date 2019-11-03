@@ -31,20 +31,20 @@
                         @endif
                         <a class="btn btn-primary" href="{{route('dataPengunjung.create')}}">
                             <i class="now-ui-icons ui-1_simple-add"></i><span> Tambah Data Pengunjung</span></a>
-                        <table class="table table-bordered" id="tabelPengunjung">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Jumlah Wisatawan</th>
-                                <th>Tanggal Kunjungan</th>
-                                <th>Keterangan</th>
-                                <th>Alamat</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                            <table class="table table-bordered" id="tabelPengunjung">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama Wisata</th>
+                                    <th>Jumlah Wisatawan</th>
+                                    <th>Tanggal Kunjungan</th>
+                                    <th>Keterangan</th>
+                                    <th>Asal</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         <div class="card-footer"></div>
                     </div>
                 </div>
@@ -286,11 +286,15 @@
                 var dt = $('#tabelPengunjung').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: '{{route('tabel.pengunjungWisata')}}',
+                    ajax: '{{route('tabel.pengunjung')}}',
                     columns: [{
                         data: 'id_dataPengunjung',
                         name: 'id_dataPengunjung'
                     },
+                        {
+                            data: 'nama_wisata',
+                            name: 'nama_wisata'
+                        },
                         {
                             data: 'jumlah_dataPengunjung',
                             name: 'jumlah_dataPengunjung'
@@ -307,7 +311,6 @@
                             data: 'asal',
                             name: 'asal'
                         },
-                        {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                     ]
                 });
                 var del = function (id) {

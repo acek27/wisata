@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pengunjung_wisata.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pengunjung_wisata.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/inputPengunjung.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/inputPengunjung.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/detailWisata.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,6 +136,11 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SSeWU1eWQtYPVdDfFBVQyfDm7P" />
@@ -180,7 +195,9 @@
       <workItem from="1572566948211" duration="2975000" />
       <workItem from="1572595379660" duration="3065000" />
       <workItem from="1572609310708" duration="5006000" />
-      <workItem from="1572709839566" duration="627000" />
+      <workItem from="1572709839566" duration="1259000" />
+      <workItem from="1572738880064" duration="406000" />
+      <workItem from="1572740610221" duration="3749000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -336,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572598252410</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="concat">
+      <created>1572711097645</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1572711097645</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,6 +401,7 @@
     <MESSAGE value="revisi tabel admin wisata" />
     <MESSAGE value="fix chart" />
     <MESSAGE value="fix chart (all)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix chart (all)" />
+    <MESSAGE value="concat" />
+    <option name="LAST_COMMIT_MESSAGE" value="concat" />
   </component>
 </project>
