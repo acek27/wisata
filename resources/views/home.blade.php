@@ -27,7 +27,11 @@
                             Export PDF by Year
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}">2019</a>
+                            @php($start = date('Y'))
+                            @php($end =$start-4)
+                            @for($year = $start; $year >= $end; $year--)
+                                <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}/{{$year}}">{{$year}}</a>
+                            @endfor
                         </div>
                     </div>
                     <div class="btn-group">
@@ -36,7 +40,11 @@
                             Export PDF by Month
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}">Januari</a>
+                            @php($bulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli',
+                       'Agustus','September','Oktober','November','Desember'])
+                            @for($i = 0; $i < 12; $i++)
+                                <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}/{{$i+1}}">{{$bulan[$i]}}</a>
+                            @endfor
                         </div>
                     </div>
                     <div class="btn-group">
@@ -45,7 +53,9 @@
                             Export PDF by Tourism Name
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}">Teluk Love</a>
+                            @foreach($wisata as $nama)
+                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}/{{$nama->id}}">{{$nama->name}}</a>
+                            @endforeach
                         </div>
                     </div>
                     <table class="table table-bordered" id="tabelPengunjung">

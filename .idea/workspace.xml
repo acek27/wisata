@@ -4,11 +4,9 @@
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/myPDF.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myPDF.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +188,13 @@
       <workItem from="1572609310708" duration="5006000" />
       <workItem from="1572709839566" duration="1259000" />
       <workItem from="1572738880064" duration="406000" />
-      <workItem from="1572740610221" duration="6609000" />
+      <workItem from="1572740610221" duration="6640000" />
+      <workItem from="1572778394034" duration="5581000" />
+      <workItem from="1572828501038" duration="1505000" />
+      <workItem from="1572831549814" duration="46000" />
+      <workItem from="1572831786888" duration="162000" />
+      <workItem from="1572832146964" duration="618000" />
+      <workItem from="1572848111521" duration="344000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -367,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572756280820</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="fix report pdf">
+      <created>1572765689158</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1572765689158</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,6 +421,7 @@
     <MESSAGE value="fix chart (all)" />
     <MESSAGE value="concat" />
     <MESSAGE value="report pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="report pdf" />
+    <MESSAGE value="fix report pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix report pdf" />
   </component>
 </project>

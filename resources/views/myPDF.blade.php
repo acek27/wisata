@@ -48,7 +48,6 @@
         <tr>
             <td>{{ $i++ }}</td>
             <td>{{$p->tanggal_dataPengunjung}}</td>
-            //isikan ini tolong
             <td>{{$p->nama_wisata}}</td>
             <td>{{$p->jumlah_dataPengunjung}}</td>
             <td>{{$p->asal}}</td>

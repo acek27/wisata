@@ -6,6 +6,7 @@ use App\dataPengunjung;
 use App\User;
 use App\wisata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\DataTables;
 
@@ -114,7 +115,8 @@ class wisataController extends Controller
      */
     public function edit($id)
     {
-        $data = wisata::join('users', 'wisata.id_user', '=', 'users.id')->first();
+        $data = wisata::join('users', 'wisata.id_user', '=', 'users.id')
+            ->where('users.id','=',Auth::User()->id)->first();
 //        return response()->json($data);
         return view('admin.editwisata', compact('data'));
 

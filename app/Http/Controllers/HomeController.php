@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\dataPengunjung;
+use App\User;
+use App\wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -45,7 +47,8 @@ class HomeController extends Controller
             }
             $data1 = implode(', ', $re[0]);
             $data2 = implode(', ', $re[1]);
-            return view('home', compact('data1', 'data2'));
+            $wisata= User::where('id','!=',1)->get();
+            return view('home', compact('data1', 'data2','wisata'));
         } elseif (\Auth::user()->can('adminwisata') == 2) {
             return redirect()->route('adminWisata.index');
         }
@@ -65,5 +68,6 @@ class HomeController extends Controller
         $pdf = PDF::loadView('myPDF',['data'=>$data]);
 //        return $pdf->download('laporan-pegawai-pdf');
         return $pdf->stream('Laporan-Wisata-'.date('Y').'.pdf');
+
     }
 }
