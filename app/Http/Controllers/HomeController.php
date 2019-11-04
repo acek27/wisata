@@ -47,27 +47,79 @@ class HomeController extends Controller
             }
             $data1 = implode(', ', $re[0]);
             $data2 = implode(', ', $re[1]);
-            $wisata= User::where('id','!=',1)->get();
-            return view('home', compact('data1', 'data2','wisata'));
+            $wisata = User::where('id', '!=', 1)->get();
+            return view('home', compact('data1', 'data2', 'wisata'));
         } elseif (\Auth::user()->can('adminwisata') == 2) {
             return redirect()->route('adminWisata.index');
         }
     }
 
-    public function generatePDF()
-
+    public function generatePDF($year)
     {
-        $data = dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
-            'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
-            DB::raw('CONCAT_WS(" ",regencies.name, " - ", negara_nama) AS asal'))
-            ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
-            ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
-            ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
-            ->join('users', 'datapengunjung.id_user', '=', 'users.id')
-            ->get();;
-        $pdf = PDF::loadView('myPDF',['data'=>$data]);
-//        return $pdf->download('laporan-pegawai-pdf');
-        return $pdf->stream('Laporan-Wisata-'.date('Y').'.pdf');
+        $cek = dataPengunjung::where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', $year);
 
+        if ($cek->exists()) {
+            $data = dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
+                'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
+                DB::raw('CONCAT_WS(" ",regencies.name, " - ", negara_nama) AS asal'))
+                ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+                ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
+                ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
+                ->join('users', 'datapengunjung.id_user', '=', 'users.id')
+                ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', $year)
+                ->get();;
+            $pdf = PDF::loadView('myPDF', ['data' => $data]);
+            return $pdf->stream('Laporan-Wisata-' . date('Y') . '.pdf');
+
+        } else {
+            return redirect()->back()->with('message', 'Data tidak ditemukan');
+        }
+    }
+
+    public function generateByMonth($month)
+    {
+        $cek = dataPengunjung::where(DB::raw('MONTH(tanggal_dataPengunjung)'), '=', $month)
+            ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', DB::raw('YEAR(current_date())'));
+        if ($cek->exists()) {
+            $data = dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
+                'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
+                DB::raw('CONCAT_WS(" ",regencies.name, " - ", negara_nama) AS asal'))
+                ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+                ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
+                ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
+                ->join('users', 'datapengunjung.id_user', '=', 'users.id')
+                ->where(DB::raw('MONTH(tanggal_dataPengunjung)'), '=', $month)
+                ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', DB::raw('YEAR(current_date())'))
+                ->get();
+            $pdf = PDF::loadView('myPDF', ['data' => $data]);
+            return $pdf->stream('Laporan-Wisata-' . date('Y') . '.pdf');
+
+        } else {
+            return redirect()->back()->with('message', 'Data tidak ditemukan');
+        }
+    }
+    public function generateByName($name)
+    {
+        $cek = dataPengunjung::join('users', 'datapengunjung.id_user', '=', 'users.id')
+            ->where('users.id','=',$name)
+            ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', DB::raw('YEAR(current_date())'));
+
+        if ($cek->exists()) {
+            $data = dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
+                'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
+                DB::raw('CONCAT_WS(" ",regencies.name, " - ", negara_nama) AS asal'))
+                ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+                ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
+                ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
+                ->join('users', 'datapengunjung.id_user', '=', 'users.id')
+                ->where('users.id','=',$name)
+                ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', DB::raw('YEAR(current_date())'))
+                ->get();
+            $pdf = PDF::loadView('myPDF', ['data' => $data]);
+            return $pdf->stream('Laporan-Wisata-' . date('Y') . '.pdf');
+
+        } else {
+            return redirect()->back()->with('message', 'Data tidak ditemukan');
+        }
     }
 }

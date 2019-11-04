@@ -31,5 +31,11 @@ Route::Resource('/adminWisata', 'adminWisataController');
 
 Route::Resource('/userWisata', 'userWisataController');
 
-Route::get('/generatePDFAdmin','HomeController@generatePDF')->name('homeAdmin.pdf');
+//khusus cetak PDF
+//admin
+Route::get('/generatePDFAdmin/{year}','HomeController@generatePDF');
+Route::get('/generatePDFMonth/{month}','HomeController@generateByMonth');
+Route::get('/generatePDFName/{name}','HomeController@generateByName');
+
+
 Route::get('/generatePDF','adminWisataController@generatePDF')->name('wisataAdmin.pdf');

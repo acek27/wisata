@@ -21,6 +21,11 @@
             <div class="card card-chart">
                 <div class="card-header">
                     <!-- Example single danger button -->
+                    @if(session()->has('message'))
+                        <div class="alert alert-danger">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
                     <div class="btn-group">
                         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false" target="_blank" style="color: white">
@@ -30,7 +35,7 @@
                             @php($start = date('Y'))
                             @php($end =$start-4)
                             @for($year = $start; $year >= $end; $year--)
-                                <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}/{{$year}}">{{$year}}</a>
+                                <a class="dropdown-item" href="{{url('generatePDFAdmin/')}}/{{$year}}">{{$year}}</a>
                             @endfor
                         </div>
                     </div>
@@ -43,7 +48,8 @@
                             @php($bulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli',
                        'Agustus','September','Oktober','November','Desember'])
                             @for($i = 0; $i < 12; $i++)
-                                <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}/{{$i+1}}">{{$bulan[$i]}}</a>
+                                <a class="dropdown-item"
+                                   href="{{url('/generatePDFMonth/')}}/{{$i+1}}">{{$bulan[$i]}}</a>
                             @endfor
                         </div>
                     </div>
@@ -54,7 +60,8 @@
                         </a>
                         <div class="dropdown-menu">
                             @foreach($wisata as $nama)
-                            <a class="dropdown-item" href="{{route('homeAdmin.pdf')}}/{{$nama->id}}">{{$nama->name}}</a>
+                                <a class="dropdown-item"
+                                   href="{{url('/generatePDFName/')}}/{{$nama->id}}">{{$nama->name}}</a>
                             @endforeach
                         </div>
                     </div>

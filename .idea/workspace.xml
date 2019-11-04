@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/wisataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/894556867.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/myPDF.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myPDF.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +195,9 @@
       <workItem from="1572831786888" duration="162000" />
       <workItem from="1572832146964" duration="618000" />
       <workItem from="1572848111521" duration="563000" />
-      <workItem from="1572851678436" duration="2199000" />
+      <workItem from="1572851678436" duration="2681000" />
+      <workItem from="1572857572245" duration="35000" />
+      <workItem from="1572868793801" duration="3209000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -384,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572848515343</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="edit bug fix">
+      <created>1572853892816</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1572853892816</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +415,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="query grafik" />
     <MESSAGE value="rebuild" />
     <MESSAGE value="create wisata" />
     <MESSAGE value="delete wisata" />
@@ -429,6 +439,7 @@
     <MESSAGE value="report pdf" />
     <MESSAGE value="fix report pdf" />
     <MESSAGE value="fix edit wisata adminWisata" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix edit wisata adminWisata" />
+    <MESSAGE value="edit bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit bug fix" />
   </component>
 </project>
