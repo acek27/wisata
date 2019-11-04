@@ -116,7 +116,7 @@ class wisataController extends Controller
     public function edit($id)
     {
         $data = wisata::join('users', 'wisata.id_user', '=', 'users.id')
-            ->where('users.id','=',Auth::User()->id)->first();
+            ->where('users.id', '=', $id)->first();
 //        return response()->json($data);
         return view('admin.editwisata', compact('data'));
 
