@@ -37,5 +37,6 @@ Route::get('/generatePDFAdmin/{year}','HomeController@generatePDF');
 Route::get('/generatePDFMonth/{month}','HomeController@generateByMonth');
 Route::get('/generatePDFName/{name}','HomeController@generateByName');
 
-
-Route::get('/generatePDF','adminWisataController@generatePDF')->name('wisataAdmin.pdf');
+//adminwisata
+Route::get('/generatePDF/{year}','adminWisataController@generatePDF')->name('wisataAdmin.pdf');
+Route::get('/generatePDFMonthWisata/{month}','adminWisataController@generateByMonth');

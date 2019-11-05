@@ -29,40 +29,54 @@
                                 {!! session()->get('flash_notification.message') !!}
                             </div>
                         @endif
-                            <div class="btn-group">
-                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                   aria-haspopup="true" aria-expanded="false" style="color: white">
-                                    Export PDF by Year
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{route('wisataAdmin.pdf')}}" target="_blank">2019</a>
-                                </div>
+                        @if(session()->has('message'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('message') }}
                             </div>
-                            <div class="btn-group">
-                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false" style="color: white">
-                                    Export PDF by Month
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{route('wisataAdmin.pdf')}}" target="_blank">Januari</a>
-                                </div>
+                        @endif
+                        <div class="btn-group">
+                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" style="color: white">
+                                Export PDF by Year
+                            </button>
+                            <div class="dropdown-menu">
+                                @php($start = date('Y'))
+                                @php($end =$start-4)
+                                @for($year = $start; $year >= $end; $year--)
+                                    <a class="dropdown-item" href="{{url('generatePDF/')}}/{{$year}}">{{$year}}</a>
+                                @endfor
                             </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" style="color: white">
+                                Export PDF by Month
+                            </button>
+                            <div class="dropdown-menu">
+                                @php($bulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli',
+                 'Agustus','September','Oktober','November','Desember'])
+                                @for($i = 0; $i < 12; $i++)
+                                    <a class="dropdown-item"
+                                       href="{{url('/generatePDFMonthWisata/')}}/{{$i+1}}">{{$bulan[$i]}}</a>
+                                @endfor
+                            </div>
+                        </div>
                         <a class="btn btn-primary" href="{{route('dataPengunjung.create')}}">
                             <i class="now-ui-icons ui-1_simple-add"></i><span> Tambah Data Pengunjung</span></a>
-                            <table class="table table-bordered" id="tabelPengunjung">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nama Wisata</th>
-                                    <th>Jumlah Wisatawan</th>
-                                    <th>Tanggal Kunjungan</th>
-                                    <th>Keterangan</th>
-                                    <th>Asal</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                        <table class="table table-bordered" id="tabelPengunjung">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nama Wisata</th>
+                                <th>Jumlah Wisatawan</th>
+                                <th>Tanggal Kunjungan</th>
+                                <th>Keterangan</th>
+                                <th>Asal</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                         <div class="card-footer"></div>
                     </div>
                 </div>
@@ -304,7 +318,7 @@
                 var dt = $('#tabelPengunjung').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: '{{route('tabel.pengunjung')}}',
+                    ajax: '{{route('tabel.pengunjungWisata')}}',
                     columns: [{
                         data: 'id_dataPengunjung',
                         name: 'id_dataPengunjung'

@@ -95,7 +95,7 @@ class HomeController extends Controller
             return $pdf->stream('Laporan-Wisata-' . date('Y') . '.pdf');
 
         } else {
-            return redirect()->back()->with('message', 'Data tidak ditemukan');
+            return redirect()->back()->with('message', 'Tidak ada pengunjung di bulan ini');
         }
     }
     public function generateByName($name)
