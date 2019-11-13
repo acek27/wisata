@@ -92,7 +92,7 @@ class HomeController extends Controller
                 ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', DB::raw('YEAR(current_date())'))
                 ->get();
             $pdf = PDF::loadView('myPDF', ['data' => $data]);
-            return $pdf->stream('Laporan-Wisata-' . date('Y') . '.pdf');
+            return $pdf->stream('Laporan-Wisata-' . date('F-Y') . '.pdf');
 
         } else {
             return redirect()->back()->with('message', 'Tidak ada pengunjung di bulan ini');
@@ -116,7 +116,8 @@ class HomeController extends Controller
                 ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', DB::raw('YEAR(current_date())'))
                 ->get();
             $pdf = PDF::loadView('myPDF', ['data' => $data]);
-            return $pdf->stream('Laporan-Wisata-' . date('Y') . '.pdf');
+            $nama = User::where('id','=',$name)->value('name');
+            return $pdf->stream('Laporan-Wisata-' . $nama .'-' . date('Y') . '.pdf');
 
         } else {
             return redirect()->back()->with('message', 'Data tidak ditemukan');

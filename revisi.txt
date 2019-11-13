@@ -1,0 +1,10 @@
+admin dashboard :
+-> tabel admin tambah nama wisata
+-> id gnti no.
+
+profil wisata :
+-> id diganti no.
+
+
+admin wisata :
+->tabel tambah negara/provinsi/kabupaten

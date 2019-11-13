@@ -5,8 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/myPDF.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myPDF.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,9 +141,10 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wedding" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -198,7 +201,14 @@
       <workItem from="1572851678436" duration="2681000" />
       <workItem from="1572857572245" duration="35000" />
       <workItem from="1572868793801" duration="4915000" />
-      <workItem from="1572913674334" duration="5553000" />
+      <workItem from="1572913674334" duration="11638000" />
+      <workItem from="1572943832784" duration="139000" />
+      <workItem from="1572951777796" duration="2955000" />
+      <workItem from="1573007657588" duration="2122000" />
+      <workItem from="1573044454833" duration="1283000" />
+      <workItem from="1573086979616" duration="5437000" />
+      <workItem from="1573342405073" duration="98000" />
+      <workItem from="1573649980739" duration="2958000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -403,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572872132696</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="report PDF adminwisata">
+      <created>1572927721891</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1572927721891</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +440,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create wisata" />
     <MESSAGE value="delete wisata" />
     <MESSAGE value="update" />
     <MESSAGE value="form data pengunjung" />
@@ -448,6 +464,7 @@
     <MESSAGE value="fix edit wisata adminWisata" />
     <MESSAGE value="edit bug fix" />
     <MESSAGE value="report PDF admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="report PDF admin" />
+    <MESSAGE value="report PDF adminwisata" />
+    <option name="LAST_COMMIT_MESSAGE" value="report PDF adminwisata" />
   </component>
 </project>

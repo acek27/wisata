@@ -30,7 +30,11 @@
                             </div>
                         @endif
                         @if(session()->has('message'))
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                            </button>
                             <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                                </button>
                                 {{ session()->get('message') }}
                             </div>
                         @endif
@@ -72,6 +76,7 @@
                                 <th>Tanggal Kunjungan</th>
                                 <th>Keterangan</th>
                                 <th>Asal</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -343,6 +348,7 @@
                             data: 'asal',
                             name: 'asal'
                         },
+                        {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                     ]
                 });
                 var del = function (id) {

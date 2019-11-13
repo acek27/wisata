@@ -87,7 +87,7 @@ class adminWisataController extends Controller
                 ->where('id_user', '=', Auth::user()->id)
                 ->get();
             $pdf = PDF::loadView('myPDF', compact('data'));
-            return $pdf->stream('Laporan-Pengunjung-' . Auth::user()->name . date('Y'));
+            return $pdf->stream('Laporan-Pengunjung-' . Auth::user()->name . date('F-Y'));
 
         } else {
             return redirect()->back()->with('message', 'Data tidak ditemukan');

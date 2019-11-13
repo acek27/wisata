@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\dataPengunjung;
 use App\kabupaten;
 use App\negara;
+use App\pengunjung;
 use App\provinsi;
 use App\User;
 use App\wisata;
@@ -101,15 +102,15 @@ class dataPengunjungController extends Controller
         return DataTables::of(dataPengunjung::select('id_dataPengunjung', 'jumlah_dataPengunjung',
             'tanggal_dataPengunjung', 'status_pengunjung', 'users.name as nama_wisata',
             DB::raw('CONCAT_WS(" ",regencies.name, " ", negara_nama) AS asal'))
+            ->join('users', 'users.id', '=', 'datapengunjung.id_user')
             ->join('pengunjung', 'datapengunjung.id_pengunjung', '=', 'pengunjung.id_pengunjung')
             ->join('negara', 'datapengunjung.id_negara', '=', 'negara.id')
             ->leftjoin('regencies', 'datapengunjung.id_kabupaten', '=', 'regencies.id')
-            ->join('users', 'datapengunjung.id_user', '=', 'users.id')
             ->where('id_user', '=', Auth::user()->id))
             ->addColumn('action', function ($data) {
                 $del = '<a href="#" data-id="' . $data->id_dataPengunjung . '" class="hapus-data"><i class="now-ui-icons files_box"> delete</i></a>';
-//                $edit = '<a href="' . route('dataPengunjung.edit', $data->id_dataPengunjung) . '"><i class="now-ui-icons text_caps-small"> edit</i></a>';
-                return $del;
+                $edit = '<a href="' . route('dataPengunjung.edit', $data->id_dataPengunjung) . '"><i class="now-ui-icons text_caps-small"> edit</i></a>';
+                return $edit . '&nbsp' . '&nbsp' . $del;
             })
             ->make(true);
     }
@@ -133,7 +134,11 @@ class dataPengunjungController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pengunjung = dataPengunjung::findOrFail($id);
+        $status = pengunjung::all();
+        $negara = negara::all();
+        $provinsi = provinsi::all();
+        return view('adminWisata.editPengunjung', compact('pengunjung', 'provinsi','status','negara'));
     }
 
     /**
@@ -145,7 +150,31 @@ class dataPengunjungController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pengunjung = $request->get('pengunjung');
+        if ($pengunjung == 1) {
+            dataPengunjung::where('id_dataPengunjung',$id)->update([
+                'jumlah_dataPengunjung' => $request['jumlah'],
+                'tanggal_dataPengunjung' => $request['tgl'],
+                'id_negara' => 102,
+                'id_kabupaten' => $request['kabupaten'],
+                'id_pengunjung' => $request['pengunjung'],
+                'id_user' => Auth::user()->id,
+            ]);
+        } elseif ($pengunjung == 2) {
+            dataPengunjung::where('id_dataPengunjung',$id)->update([
+                'jumlah_dataPengunjung' => $request['jumlah'],
+                'tanggal_dataPengunjung' => $request['tgl'],
+                'id_negara' => $request['negara'],
+                'id_pengunjung' => $request['pengunjung'],
+                'id_user' => Auth::user()->id,
+            ]);
+        }
+
+        \Session::flash("flash_notification", [
+            "level" => "success",
+            "message" => "Berhasil Menambah Pengunjung"
+        ]);
+        return redirect()->route('adminWisata.index');
     }
 
     /**

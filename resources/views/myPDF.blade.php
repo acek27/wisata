@@ -10,20 +10,22 @@
 <body>
 <style type="text/css">
     table tr td,
-    table tr th{
+    table tr th {
         font-size: 8pt;
     }
-    table tr th{
+
+    table tr th {
         text-align: center;
     }
-    td{
+
+    td {
         text-transform: capitalize;
     }
 </style>
 @can('admin')
-<h5 style="text-align: center; margin-top: 5px; margin-bottom: 5px">
-    Pengunjung Wisata Kabupaten Jember Tahun {{(int)date('Y')}}
-</h5>
+    <h5 style="text-align: center; margin-top: 5px; margin-bottom: 5px;">
+        Pengunjung Wisata Kabupaten Jember Tahun {{(int)date('Y')}}
+    </h5>
 @endcan
 @can('adminwisata')
     <h5 style="text-align: center; margin-top: 5px; margin-bottom: 5px">
@@ -31,6 +33,13 @@
     </h5>
 @endcan
 <br>
+<br>
+@php date_default_timezone_set('Asia/Jakarta') @endphp
+<pre>
+Tanggal Diambil     : {{date('l, j-F-Y')}}
+Waktu Diambil       : {{date('H:i:s a')}}
+Jumlah Pengunjung   : {{$data->sum('jumlah_dataPengunjung')}}
+</pre>
 <table class='table table-bordered'>
     <thead>
     <tr>
@@ -48,6 +57,7 @@
         <tr>
             <td>{{ $i++ }}</td>
             <td>{{$p->tanggal_dataPengunjung}}</td>
+            //isikan ini tolong
             <td>{{$p->nama_wisata}}</td>
             <td>{{$p->jumlah_dataPengunjung}}</td>
             <td>{{$p->asal}}</td>

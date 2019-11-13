@@ -23,12 +23,14 @@
                     <!-- Example single danger button -->
                     @if(session()->has('message'))
                         <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                            </button>
                             {{ session()->get('message') }}
                         </div>
                     @endif
                     <div class="btn-group">
                         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false" target="_blank" style="color: white">
+                           aria-haspopup="true" aria-expanded="false" style="color: white">
                             Export PDF by Year
                         </a>
                         <div class="dropdown-menu">
@@ -41,7 +43,7 @@
                     </div>
                     <div class="btn-group">
                         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false" target="_blank" style="color: white">
+                           aria-haspopup="true" aria-expanded="false" style="color: white">
                             Export PDF by Month
                         </a>
                         <div class="dropdown-menu">
@@ -55,7 +57,7 @@
                     </div>
                     <div class="btn-group">
                         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false" target="_blank" style="color: white">
+                           aria-haspopup="true" aria-expanded="false" style="color: white">
                             Export PDF by Tourism Name
                         </a>
                         <div class="dropdown-menu">
