@@ -28,12 +28,14 @@
 
 <body class="">
 <div class="main-panel" id="main-panel" style="width: 100%">
-    <nav class="navbar navbar-transparent navbar-absolute">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
             <div class="col-lg-12">
-                <h5 class="text-center" style="color: white; margin-top: 10px; text-transform: uppercase">@yield('sub')</h5>
+                <h5 class="text-center"
+                    style="color: white; margin-top: 10px; text-transform: uppercase">@yield('sub')</h5>
             </div>
         </div>
+        @yield('year')
     </nav>
     @yield('content')
 </div>

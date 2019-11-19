@@ -30,6 +30,7 @@ Route::get('/tabelwisata', 'wisataController@tabelwisata')->name('tabel.wisata')
 Route::Resource('/adminWisata', 'adminWisataController');
 
 Route::Resource('/userWisata', 'userWisataController');
+Route::get('/wisatatahun/{tahun}', 'userWisataController@tahun')->name('userWisata.tahun');
 
 //khusus cetak PDF
 //admin

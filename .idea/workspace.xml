@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="710039a1-01b0-4e65-8e0e-f971abedbc51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/adminWisataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/dataPengunjungController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminWisata/homeWisata.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/myPDF.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myPDF.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/userWisataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/userWisataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/userLayout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/userLayout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/homeUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wedding" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../profil" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -208,7 +206,8 @@
       <workItem from="1573044454833" duration="1283000" />
       <workItem from="1573086979616" duration="5437000" />
       <workItem from="1573342405073" duration="98000" />
-      <workItem from="1573649980739" duration="2958000" />
+      <workItem from="1573649980739" duration="3295000" />
+      <workItem from="1574166099565" duration="2767000" />
     </task>
     <task id="LOCAL-00001" summary="query grafik">
       <created>1571899222368</created>
@@ -420,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572927721891</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="report PDF adminwisata">
+      <created>1573653039860</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1573653039860</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

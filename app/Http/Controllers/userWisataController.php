@@ -18,6 +18,7 @@ class userWisataController extends Controller
      */
     public function index()
     {
+        $tahun = date('Y');
         $wisata = wisata::join('users', 'wisata.id_user', '=', 'users.id')->get();
         $data = dataPengunjung::select(
             DB::raw('YEAR(tanggal_dataPengunjung) as tahun'), 'id_pengunjung',
@@ -35,7 +36,7 @@ class userWisataController extends Controller
         }
         $data1 = implode(', ', $re[0]);
         $data2 = implode(', ', $re[1]);
-        return view('user.homeUser', compact('data1', 'data2', 'wisata'));
+        return view('user.homeUser', compact('data1', 'data2', 'wisata','tahun'));
     }
 
     /**
@@ -65,6 +66,28 @@ class userWisataController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
+
+    public function tahun($tahun){
+        $wisata = wisata::join('users', 'wisata.id_user', '=', 'users.id')->get();
+        $data = dataPengunjung::select(
+            DB::raw('YEAR(tanggal_dataPengunjung) as tahun'), 'id_pengunjung',
+            DB::raw('MONTH(tanggal_dataPengunjung) as bulan'), 'id_pengunjung',
+            DB::raw('sum(jumlah_dataPengunjung) as jumlah'))
+            ->where(DB::raw('YEAR(tanggal_dataPengunjung)'), '=', $tahun)
+            ->groupby(DB::raw('YEAR(tanggal_dataPengunjung)'))
+            ->groupby(DB::raw('MONTH(tanggal_dataPengunjung)'))
+            ->groupby('id_pengunjung')
+            ->get();
+
+        $re = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+        foreach ($data as $key => $value) {
+            $re[$value->id_pengunjung - 1][$value->bulan - 1] = $value->jumlah;
+        }
+        $data1 = implode(', ', $re[0]);
+        $data2 = implode(', ', $re[1]);
+        return view('user.homeUser', compact('data1', 'data2', 'wisata','tahun'));
+    }
+
     public function show($id)
     {
         $data = dataPengunjung::select(
