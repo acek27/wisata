@@ -12,6 +12,6 @@ class kabupaten extends Model
 
     public function provinsi()
     {
-        return $this->belongsTo('App\provinsi','province_id','id');
+        return $this->belongsTo('App\Provinsi','province_id','id');
     }
 }

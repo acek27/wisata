@@ -12,6 +12,6 @@ class negara extends Model
 
     public function provinsi()
     {
-        return $this->hasMany(provinsi::class, 'id_negara', 'id');
+        return $this->hasMany(Provinsi::class, 'id_negara', 'id');
     }
 }
