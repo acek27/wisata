@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\dataPengunjung;
-use App\wisata;
+use App\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\dataPengunjung;
 use App\User;
-use App\wisata;
+use App\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +19,7 @@ class userWisataController extends Controller
     public function index()
     {
         $tahun = date('Y');
-        $wisata = wisata::join('users', 'wisata.id_user', '=', 'users.id')->get();
+        $wisata = Wisata::join('users', 'wisata.id_user', '=', 'users.id')->get();
         $data = dataPengunjung::select(
             DB::raw('YEAR(tanggal_dataPengunjung) as tahun'), 'id_pengunjung',
             DB::raw('MONTH(tanggal_dataPengunjung) as bulan'), 'id_pengunjung',
@@ -68,7 +68,7 @@ class userWisataController extends Controller
      */
 
     public function tahun($tahun){
-        $wisata = wisata::join('users', 'wisata.id_user', '=', 'users.id')->get();
+        $wisata = Wisata::join('users', 'wisata.id_user', '=', 'users.id')->get();
         $data = dataPengunjung::select(
             DB::raw('YEAR(tanggal_dataPengunjung) as tahun'), 'id_pengunjung',
             DB::raw('MONTH(tanggal_dataPengunjung) as bulan'), 'id_pengunjung',

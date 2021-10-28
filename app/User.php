@@ -21,7 +21,7 @@ class User extends Authenticatable
 
     public function wisata()
     {
-        return $this->belongsTo('App\wisata', 'id_user', 'id');
+        return $this->belongsTo('App\Wisata', 'id_user', 'id');
     }
 
     /**

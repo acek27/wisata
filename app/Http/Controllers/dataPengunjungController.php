@@ -8,7 +8,7 @@ use App\negara;
 use App\pengunjung;
 use App\provinsi;
 use App\User;
-use App\wisata;
+use App\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

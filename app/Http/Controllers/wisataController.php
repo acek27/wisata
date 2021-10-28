@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\dataPengunjung;
 use App\User;
-use App\wisata;
+use App\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +24,7 @@ class wisataController extends Controller
      */
     public function index()
     {
-        $wisata = wisata::join('users', 'wisata.id_user', '=', 'users.id')
+        $wisata = Wisata::join('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '!=', '1')->get();
         return view('admin.profilwisata', compact('wisata'));
     }
@@ -41,7 +41,7 @@ class wisataController extends Controller
 
     public function tabelwisata()
     {
-        return DataTables::of(wisata::leftjoin('users', 'wisata.id_user', '=', 'users.id')
+        return DataTables::of(Wisata::leftjoin('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '!=', '1'))
             ->addColumn('action', function ($data) {
                 $del = '<a href="#" data-id="' . $data->id_user . '" class="hapus-data" style="font-size: 15px"><i class="now-ui-icons files_box"></i> Delete</a>';
@@ -73,7 +73,7 @@ class wisataController extends Controller
             $gambar = $request->file('gambar');
             $new_name = rand() . '.' . $gambar->getClientOriginalExtension();
             $gambar->move(public_path("images"), $new_name);
-            wisata::create([
+            Wisata::create([
                 'alamat' => $request['alamat'],
                 'deskripsi' => $request['deskripsi'],
                 'facebook' => $request['fb'],
@@ -115,7 +115,7 @@ class wisataController extends Controller
      */
     public function edit($id)
     {
-        $data = wisata::join('users', 'wisata.id_user', '=', 'users.id')
+        $data = Wisata::join('users', 'wisata.id_user', '=', 'users.id')
             ->where('users.id', '=', $id)->first();
 //        return response()->json($data);
         return view('admin.editwisata', compact('data'));
@@ -141,7 +141,7 @@ class wisataController extends Controller
         $new_name = rand() . '.' . $gambar->getClientOriginalExtension();
         $gambar->move(public_path("images"), $new_name);
 
-        wisata::where('id_user', '=', $id)
+        Wisata::where('id_user', '=', $id)
             ->update([
                 'alamat' => $request['alamat'],
                 'deskripsi' => $request['deskripsi'],
