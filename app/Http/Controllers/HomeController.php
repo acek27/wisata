@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\dataPengunjung;
 use App\User;
-use App\wisata;
+use App\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;

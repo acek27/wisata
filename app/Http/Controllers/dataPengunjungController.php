@@ -6,9 +6,9 @@ use App\dataPengunjung;
 use App\kabupaten;
 use App\negara;
 use App\pengunjung;
-use App\provinsi;
+use App\Provinsi;
 use App\User;
-use App\wisata;
+use App\Wisata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +41,7 @@ class dataPengunjungController extends Controller
     {
         $date = date('Y-m-d');
         $negara = negara::all();
-        $provinsi = provinsi::all();
+        $provinsi = Provinsi::all();
         return view('adminWisata.inputPengunjung', compact('date', 'negara', 'provinsi'));
     }
 
@@ -137,7 +137,7 @@ class dataPengunjungController extends Controller
         $pengunjung = dataPengunjung::findOrFail($id);
         $status = pengunjung::all();
         $negara = negara::all();
-        $provinsi = provinsi::all();
+        $provinsi = Provinsi::all();
         return view('adminWisata.editPengunjung', compact('pengunjung', 'provinsi','status','negara'));
     }
 
